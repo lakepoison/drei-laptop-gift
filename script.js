@@ -1,5 +1,5 @@
 // Password for Drei's laptop
-const CORRECT_PASSWORD = "dreimypookie";
+const CORRECT_PASSWORD = "hibabub";
 
 // Get elements
 const splash = document.getElementById('splash');

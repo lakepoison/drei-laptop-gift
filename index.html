@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Drei's Privat Laptop</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Splash Screen -->
+  <div id="splash" class="centered">
+    <h1>Drei's Privat Laptop</h1>
+  </div>
+  <!-- Login Screen -->
+  <div id="login" class="centered hidden">
+    <div class="login-box">
+      <h2>Login</h2>
+      <input type="text" id="username" placeholder="Username" autocomplete="off">
+      <input type="password" id="password" placeholder="Password" autocomplete="off">
+      <button id="login-btn">Login</button>
+      <div id="login-error"></div>
+    </div>
+  </div>
+  <!-- Loading Screen -->
+  <div id="loading" class="centered hidden">
+    <div>
+      <h2 id="hello-drei" style="margin-bottom: 1rem; opacity:0;">hello drei</h2>
+      <div id="loading-bar" style="font-size:2rem;">0%</div>
+    </div>
+  </div>
+  <!-- Desktop -->
+  <div id="desktop" class="centered hidden">
+    <div class="apps">
+      <div class="app-icon" id="music-app">
+        <svg height="60" width="60" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18V5l12-2v13"></path><circle cx="6" cy="18" r="3"></circle><circle cx="18" cy="16" r="3"></circle></svg>
+        <div>Music</div>
+      </div>
+      <div class="app-icon" id="sentences-app">
+        <svg height="60" width="60" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"></rect><path d="M2 6l10 7 10-7"></path></svg>
+        <div>Sentences</div>
+      </div>
+      <div class="app-icon" id="games-app">
+        <svg height="60" width="60" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="4"></rect><path d="M6 12h.01"></path><path d="M18 12h.01"></path></svg>
+        <div>Games</div>
+      </div>
+    </div>
+  </div>
+  <!-- Music Popup -->
+  <div id="music-popup" class="popup hidden">
+    <div class="popup-content">
+      <button class="close-btn" id="close-music">&times;</button>
+      <iframe style="border-radius:10px;filter: grayscale(1);" src="https://open.spotify.com/embed/track/3wogsSWyEEu5eVgLqUqySF" width="320" height="400" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture" loading="lazy"></iframe>
+      <div style="margin-top: 1.2em; color: #bbb; font-size: 1.07em; letter-spacing: 0.2px;">
+        this music reminds me of you
+      </div>
+    </div>
+  </div>
+  <!-- Sentences Popup -->
+  <div id="sentences-popup" class="popup hidden">
+    <div class="popup-content" id="sentences-content">
+      <button class="close-btn" id="close-sentences">&times;</button>
+      <div class="letter" style="max-height:70vh; overflow-y:auto;">
+        <!-- Sentences inserted by JS -->
+      </div>
+    </div>
+  </div>
+  <!-- Games Popup -->
+  <div id="games-popup" class="popup hidden">
+    <div class="popup-content" id="games-content">
+      <button class="close-btn" id="close-games">&times;</button>
+      <div style="margin-bottom:1em;">
+        <label for="game-select" style="font-size:1.1em;">Choose a game:</label>
+        <select id="game-select" style="margin-left:0.5em; font-size:1em;">
+          <option value="tictactoe">Tic Tac Toe</option>
+          <option value="snake">Snake</option>
+          <option value="flappy">Flappy Bird</option>
+          <option value="sudoku">Sudoku</option>
+          <option value="minesweeper">Minesweeper</option>
+          <option value="2048">2048</option>
+        </select>
+      </div>
+      <div id="mode-select-container" style="display:none; margin-bottom:1em;">
+        <label for="mode-select" style="font-size:1em;">Mode:</label>
+        <select id="mode-select" style="margin-left:0.5em; font-size:1em;">
+          <option value="bot">Play vs Bot</option>
+          <option value="friend">Play vs Friend</option>
+        </select>
+      </div>
+      <div id="game-frame-container" style="width:340px; height:400px; margin:auto;">
+        <!-- Game will appear here -->
+      </div>
+      <div style="font-size: 0.9em; color: #aaa; margin-top: 0.5em;">
+        (Choose a game from the menu above!)
+      </div>
+    </div>
+  </div>
+  <script src="snake.js"></script>
+  <script src="2048.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
